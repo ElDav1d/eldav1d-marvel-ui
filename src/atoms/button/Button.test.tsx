@@ -10,7 +10,7 @@ test('Button renders', () => {
   // ACT
   render(<Button label={BUTTON_LABEL} />);
 
-  const button = screen.getByRole('button', { name: 'wrong' });
+  const button = screen.getByRole('button', { name: BUTTON_LABEL });
 
   // ASSERT
   expect(button).toBeInTheDocument();
