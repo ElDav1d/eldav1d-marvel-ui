@@ -1,10 +1,10 @@
-# React + TypeScript + Vite
+# ElDav1d Marvel UI
+This is an UI library effort consisting in the abstraction of mere presentational components applied on my pet project [Playing wirth Marvel API](https://github.com/ElDav1d/playing-with-marvel-api)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Stack is React + TypeScript + Vite + Vitest + React Testing Library + Storybook + SWC + TailwindCSS
 
-Currently, two official plugins are available:
+This project is transpiled with SWC for better performance
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 ## Expanding the ESLint configuration
@@ -22,7 +22,7 @@ export default {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
