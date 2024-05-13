@@ -4,10 +4,13 @@ import { test, expect } from 'vitest';
 import { Button } from './Button';
 
 test('Button renders', () => {
-  // ACT
-  render(<Button label='testButton' />);
+  // ARRANGE
+  const BUTTON_LABEL = 'testButton';
 
-  const button = screen.getByRole('button', { name: 'testButton' });
+  // ACT
+  render(<Button label={BUTTON_LABEL} />);
+
+  const button = screen.getByRole('button', { name: BUTTON_LABEL });
 
   // ASSERT
   expect(button).toBeInTheDocument();
