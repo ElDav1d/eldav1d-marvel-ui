@@ -8,6 +8,16 @@
     "name": "ElDav1d",
     "email": "dvivoes@yahoo.es"
   },
+  "keywords": [
+    "react",
+    "ui",
+    "library",
+    "marvel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElDav1d/eldav1d-marvel-ui"
+  },
   "type": "module",
   "scripts": {
     "test": "vitest",
