@@ -1,6 +1,8 @@
 # ElDav1d Marvel UI
 
-This is an UI library effort consisting in the abstraction of mere presentational components applied on my pet project [Playing wirth Marvel API](https://github.com/ElDav1d/playing-with-marvel-api)
+This is an UI library effort consisting in the abstraction of mere presentational components applied on my pet project [Playing with Marvel API](https://github.com/ElDav1d/playing-with-marvel-api)
+
+It mimics the look and feel of the [Marvel Characters](https://www.marvel.com/characters) page.
 
 ## Stack is React + TypeScript + Vite + Vitest + React Testing Library + Storybook + SWC + TailwindCSS
 
@@ -8,12 +10,7 @@ This project is transpiled with SWC for better performance
 
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local
-machine for development and testing purposes.
-
-### Prerequisites
+## Prerequisites
 
 You need Node.js and npm or yarn installed on your machine. To check if you have Node.js installed, run this command in your terminal:
 
@@ -25,9 +22,26 @@ node -v
 yarn -v
 ```
 
-Install the dependencies:
+### Install the dependencies:
 
 `npm install` or `yarn`
+
+### Apply type declarations on your project
+
+This is a beta version. Until the build issues are resolved and the type definitions come from the library itself, they need to be provided from the consumer project.
+
+```bash
+my-project/
+├── types/
+│   └── declarations.d.ts
+```
+
+```bash
+// types/declarations.d.ts
+declare module 'eldav1d-marvel-ui';
+```
+
+This means: (still) no autompletion neither type checking oin the consumer project.
 
 ## Available Scripts
 
