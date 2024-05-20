@@ -1,7 +1,8 @@
+import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { test, expect } from 'vitest';
-import Button from './Button';
+import Button from '../Button';
 
 test('Button renders', () => {
   // ARRANGE

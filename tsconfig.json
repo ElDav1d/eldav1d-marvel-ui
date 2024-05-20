@@ -21,6 +21,6 @@
     "declarationMap": true
   },
   "include": ["lib"],
-  "exclude": ["node_modules", "dist", "lib/**/stories/*.ts"],
+  "exclude": ["node_modules", "dist", "lib/**/stories/*", "lib/**/__tests__/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
