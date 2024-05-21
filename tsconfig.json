@@ -20,7 +20,7 @@
     "declaration": true,
     "declarationMap": true
   },
-  "include": ["lib"],
+  "include": ["src", "lib"],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
