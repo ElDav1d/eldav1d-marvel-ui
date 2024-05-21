@@ -39,7 +39,6 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: resolve(__dirname, 'lib/index.ts'),
-      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: ['react', 'react/jsx-runtime'],
