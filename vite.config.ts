@@ -41,7 +41,7 @@ export default defineConfig({
       entry: resolve(__dirname, 'lib/index.ts'),
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime'],
+      external: ['react', 'react/jsx-runtime', 'tailwindcss'],
       input: Object.fromEntries(
         glob
           .sync('lib/**/*.{ts,tsx}', {

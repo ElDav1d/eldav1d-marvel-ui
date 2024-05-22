@@ -12,6 +12,8 @@ This project is transpiled with SWC for better performance
 
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+[TailwindCSS](https://tailwindcss.com/) is applied as Peer Dependency. Be dareful about conflicts with your _tailwind.config.js_ or your version, if your project has it already installed.
+
 ## Features
 
 Support for both ECMAScript Modules and CommonJS
