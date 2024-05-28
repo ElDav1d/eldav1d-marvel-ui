@@ -1,4 +1,4 @@
-import '../src/index.css';
+import '../lib/lib.css';
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
@@ -11,7 +11,7 @@ const preview: Preview = {
     },
   },
 
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export default preview;
