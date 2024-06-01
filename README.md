@@ -6,11 +6,7 @@ It mimics the look and feel of the [Marvel Characters](https://www.marvel.com/ch
 
 The approachrelies on [vite's library mode](https://vitejs.dev/guide/build.html#library-mode) and is heavily inspired by [this article](https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma) and this [hybrid implementation](https://github.com/waldronmatt/groundwork/tree/main/packages/ui#readme)
 
-## Stack is React + TypeScript + Vite + Vitest + React Testing Library + Storybook + SWC + TailwindCSS
-
-This project is transpiled with SWC for better performance
-
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack is React + TypeScript + Vite + Vitest + React Testing Library + Storybook + TailwindCSS
 
 [TailwindCSS](https://tailwindcss.com/) is applied as Peer Dependency. Be dareful about conflicts with your _tailwind.config.js_ or your version, if your project has it already installed.
 
