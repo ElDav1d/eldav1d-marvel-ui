@@ -1,3 +1,5 @@
+import { MARVEL_RED } from './lib/utils/constants.ts';
+
 /** @type {import('tailwindcss').Config} */
 /* eslint-env node */
 module.exports = {
@@ -6,7 +8,12 @@ module.exports = {
     './lib/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        red: MARVEL_RED,    
+      },
+
+    },
   },
   plugins: [],
 }
