@@ -1,6 +1,6 @@
 {
   "name": "eldav1d-marvel-ui",
-  "version": "0.0.57",
+  "version": "0.1.00",
   "description": "UI library for (and from) Playing with Marvel API ",
   "types": "./dist/types/esm/index.d.ts",
   "main": "./dist/cjs/index.cjs",
@@ -50,7 +50,6 @@
   },
   "scripts": {
     "test": "vitest",
-    "test:units": "vitest --root src/",
     "dev": "vite",
     "build:tailwind": "npx tailwindcss -i ./lib/lib.css -o ./dist/lib.css",
     "clean:pre-build": "rimraf dist tsconfig.build.tsbuildinfo",
