@@ -19,7 +19,7 @@ export default defineConfig({
       afterBuild: async () => {
         // Fetch all .d.ts files recursively from the dist/types/cjs directory
         const files = glob.sync('dist/types/cjs/**/*.d.{ts,ts.map}', {
-          ignore: ['lib/utils/*', 'lib/**/__stories__/*', 'lib/**/__tests__/*'],
+          ignore: ['lib/utils/*', 'src/**/*', 'lib/**/__stories__/*', 'lib/**/__tests__/*'],
           nodir: true,
         });
         // Since TypeScript 5.0, it has emphasized that type files (*.d.ts) are also affected by its ESM and CJS context.
@@ -48,7 +48,7 @@ export default defineConfig({
       input: Object.fromEntries(
         glob
           .sync('lib/**/*.{ts,tsx}', {
-            ignore: ['lib/utils/*', 'lib/**/__stories__/*', 'lib/**/__tests__/*'],
+            ignore: ['lib/utils/*', 'src/**/*', 'lib/**/__stories__/*', 'lib/**/__tests__/*'],
           })
           .map((file) => [
             // The name of the entry point
