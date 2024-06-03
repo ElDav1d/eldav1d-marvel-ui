@@ -22,6 +22,7 @@ export const Default: Story = {
     onChange: () => {
       alert('I had changed!');
     },
+    selectName: 'selectName',
     options: ['Option 1', 'Option 2', 'Option 3'],
     optionLiterals: ['Option 1', 'Option 2', 'Option 3'],
     placeholder: 'Select an option',
