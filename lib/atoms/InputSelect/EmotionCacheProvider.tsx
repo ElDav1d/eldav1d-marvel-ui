@@ -1,4 +1,4 @@
-import '../../lib.css';
+import '@/lib.css';
 import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 import { useMemo } from 'react';

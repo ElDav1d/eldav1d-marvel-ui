@@ -8,4 +8,9 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: 'setupTest.ts',
   },
+  resolve: {
+    alias: {
+      '@': '/lib',
+    },
+  },
 });

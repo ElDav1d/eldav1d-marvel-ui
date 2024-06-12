@@ -1,4 +1,4 @@
-import { getParentSelectors } from '../../../utils/helpers';
+import { getParentSelectors } from '@/utils/helpers';
 
 export interface IOverrideClassesConfig {
   state: boolean;

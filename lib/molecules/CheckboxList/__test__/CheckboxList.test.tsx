@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { test, expect } from 'vitest';
 import CheckboxList from '../CheckboxList';
+import { CheckboxGroup } from '@/molecules/CheckboxGroup';
 
 test('renders a list', () => {
   // ARRANGE
@@ -9,7 +10,14 @@ test('renders a list', () => {
   // ACT
   render(
     <CheckboxList options={options}>
-      {(option, index) => <div key={`${option}${index}`}>{option}</div>}
+      {(option, index) => (
+        <CheckboxGroup
+          option={option}
+          literal={options[index]}
+          isChecked={false}
+          onChange={() => {}}
+        />
+      )}
     </CheckboxList>,
   );
 
@@ -24,7 +32,14 @@ test('renders a list item for each option', () => {
   // ACT
   render(
     <CheckboxList options={options}>
-      {(option, index) => <div key={`${option}${index}`}>{option}</div>}
+      {(option, index) => (
+        <CheckboxGroup
+          option={option}
+          literal={options[index]}
+          isChecked={false}
+          onChange={() => {}}
+        />
+      )}
     </CheckboxList>,
   );
 

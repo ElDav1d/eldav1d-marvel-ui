@@ -1,4 +1,4 @@
-import { Input } from '../../atoms/Input';
+import { Input } from '@/atoms/Input';
 
 /**
  * Single checkbox within a group of characters filtering checkboxes

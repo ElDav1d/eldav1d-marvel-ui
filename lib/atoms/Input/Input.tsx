@@ -1,5 +1,5 @@
+import { getParentSelectors } from '@/utils/helpers';
 import React from 'react';
-import { getParentSelectors } from '../../utils/helpers';
 
 /**
  * Props for text or checkbox input elements

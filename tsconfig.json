@@ -17,6 +17,10 @@
     "noFallthroughCasesInSwitch": true,
     "outDir": "dist",
     "baseUrl": "./",
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": ["lib/*"]
+    }, 
     "declaration": true,
     "declarationMap": true
   },
