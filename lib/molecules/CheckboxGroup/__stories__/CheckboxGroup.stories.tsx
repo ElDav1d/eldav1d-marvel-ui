@@ -1,6 +1,4 @@
-import type { Args, Meta, StoryObj } from '@storybook/react';
-// import { Args } from '@storybook/addons';
-
+import type { Meta, StoryObj } from '@storybook/react';
 import CheckboxGroup from '../CheckboxGroup';
 import { useState } from 'react';
 
@@ -17,14 +15,13 @@ export default meta;
 
 type Story = StoryObj<typeof CheckboxGroup>;
 
-export const Default: Story = (args: Args) => {
+export const Default: Story = () => {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
     <CheckboxGroup
       option='option'
       literal='Option'
-      {...args}
       isChecked={isChecked}
       onChange={() => setIsChecked(!isChecked)}
     />

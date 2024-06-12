@@ -3,6 +3,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import FormGroupContainer from '../FormGroupContainer';
 import { Input } from '../../../atoms/Input';
 import { InputSelect } from '../../../atoms/InputSelect';
+import { CheckboxGroup } from 'lib/molecules/CheckboxGroup';
+import { CheckboxList } from 'lib/molecules/CheckboxList';
+import { useState } from 'react';
 
 const meta: Meta<typeof FormGroupContainer> = {
   title: 'Molecules/FormGroupContainer',
@@ -51,3 +54,44 @@ export const WithSelectInput: Story = {
     ),
   },
 };
+
+export const WithCheckboxList: Story = () => {
+  type OptionKey = 'option1' | 'option2' | 'option3';
+  type OptionsState = Record<OptionKey, boolean>;
+
+  const initialState: OptionsState = {
+    option1: false,
+    option3: false,
+    option2: false,
+  };
+
+  const [optionsState, setOptionsState] = useState(initialState);
+
+  const options: OptionKey[] = ['option1', 'option2', 'option3'];
+
+  const changeHandler = (option: OptionKey, index: number) => {
+    setOptionsState((prevState) => ({
+      ...prevState,
+      [option]: !prevState[options[index]],
+    }));
+  };
+
+  return (
+    <FormGroupContainer title='Checkbox List'>
+      <CheckboxList options={options}>
+        {(option, index) => (
+          <CheckboxGroup
+            option={option}
+            literal={options[index]}
+            isChecked={optionsState[option as OptionKey]}
+            onChange={() => {
+              changeHandler(option as OptionKey, index);
+            }}
+          />
+        )}
+      </CheckboxList>
+    </FormGroupContainer>
+  );
+};
+
+WithCheckboxList.args = {};
