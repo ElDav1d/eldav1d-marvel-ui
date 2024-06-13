@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input } from '@/atoms/Input';
+
 import { InputSelect } from '@/atoms/InputSelect';
 import { CheckboxGroup } from 'lib/molecules/CheckboxGroup';
 import { CheckboxList } from 'lib/molecules/CheckboxList';
 import { useState } from 'react';
 import FormGroupContainer from '../FormGroupContainer';
+import { InputText } from '@/atoms/InputText';
 
 const meta: Meta<typeof FormGroupContainer> = {
   title: 'Molecules/FormGroupContainer',
@@ -31,7 +32,7 @@ export const WithTextInput: Story = {
   args: {
     title: 'Form Group Container Title',
     classNameFieldset: '',
-    children: <Input type='text' className='' />,
+    children: <InputText className='' />,
   },
 };
 

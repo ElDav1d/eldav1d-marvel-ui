@@ -1,7 +1,5 @@
-import { Input } from '@/atoms/Input';
-
 /**
- * Single checkbox within a group of characters filtering checkboxes
+ * Single checkbox with label.
  * @interface
  */
 export interface ICheckboxGroupProps {
@@ -17,7 +15,7 @@ export interface ICheckboxGroupProps {
   option: string;
   /**
    * @property {string}
-   * Literal corresponding to the option.
+   * Literal corresponding to the label.
    */
   literal: string;
   /**
@@ -30,7 +28,8 @@ export interface ICheckboxGroupProps {
 const CheckboxGroup = ({ onChange, option, literal, isChecked }: ICheckboxGroupProps) => {
   return (
     <>
-      <Input
+      <input
+        className='input mr-2 h-4 w-4 checked:bg-red'
         aria-label={option}
         type='checkbox'
         id={option}

@@ -1,5 +1,5 @@
 export { DialogOverlay } from './atoms/DialogOverlay';
-export { Input } from './atoms/Input';
+export { InputText } from './atoms/InputText';
 export { InputSelect } from './atoms/InputSelect';
 
 export { CheckboxGroup } from './molecules/CheckboxGroup';

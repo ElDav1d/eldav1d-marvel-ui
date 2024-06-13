@@ -19,3 +19,33 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@layer components {
+  .accesible-outline {
+    @apply outline-2 outline-offset-2 outline-double outline-red
+  }
+
+  .focus-visible {
+    @apply focus-visible:accesible-outline
+  }
+
+  .focus-within {
+    @apply focus-within:accesible-outline focus-within:outline-offset-8
+  }
+
+  .active {
+    @apply active:accesible-outline
+  }
+
+  .focus-visible-border {
+    @apply focus-visible focus-visible:border-red
+  }
+
+  .active-border {
+    @apply active active:border-red
+  }
+
+  .input {
+    @apply bg-black text-white border border-white shadow appearance-none focus-visible-border
+  }
+}
