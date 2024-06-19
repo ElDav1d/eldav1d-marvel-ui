@@ -43,7 +43,6 @@ export default defineConfig({
     }),
   ],
   build: {
-    outDir: 'dist',
     copyPublicDir: false,
     sourcemap: true,
     lib: {
@@ -67,13 +66,11 @@ export default defineConfig({
       ),
       output: [
         {
-          dir: 'dist',
           format: 'es',
           exports: 'named',
           entryFileNames: 'esm/[name].js',
         },
         {
-          dir: 'dist',
           format: 'cjs',
           exports: 'named',
           entryFileNames: 'cjs/[name].cjs',
