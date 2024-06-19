@@ -12,7 +12,6 @@ module.exports = {
       colors: {
         red: MARVEL_RED,    
       },
-
     },
   },
   plugins: [],
