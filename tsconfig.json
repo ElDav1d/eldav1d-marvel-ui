@@ -12,12 +12,15 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "esModuleInterop": true,
+    
     "paths": {
       "@/*": ["lib/*"]
     }, 

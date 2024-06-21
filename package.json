@@ -1,6 +1,6 @@
 {
   "name": "eldav1d-marvel-ui",
-  "version": "0.5.9",
+  "version": "0.6.4",
   "description": "UI library for (and from) Playing with Marvel API ",
   "types": "./dist/types/esm/index.d.ts",
   "main": "./dist/cjs/index.cjs",
@@ -51,10 +51,10 @@
   "scripts": {
     "test": "vitest",
     "dev": "vite",
-    "build:tailwind": "npx tailwindcss -i ./lib/lib.css -o ./dist/lib.css",
+    "build:rename-css": "mv ./dist/style.css ./dist/lib.css",
     "clean:pre-build": "rimraf dist tsconfig.build.tsbuildinfo",
     "clean:after-build": "find ./dist -type d \\( -name '__stories__' -o -name '__tests__' \\) -exec rm -r {} \\; && rimraf ./dist/style.css",
-    "build": "npm run clean:pre-build && tsc --p ./tsconfig-build.json && vite build && npm run build:tailwind && npm run clean:after-build",
+    "build": "npm run clean:pre-build && tsc --p ./tsconfig-build.json && vite build && npm run build:rename-css && npm run clean:after-build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -63,7 +63,8 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "react-lazy-load-image-component": "^1.6.2"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
@@ -81,6 +82,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-lazy-load-image-component": "^1.6.4",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.3.0",
