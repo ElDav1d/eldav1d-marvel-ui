@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = {
-    content: ['./src/**/*.{tsx}'],
+    content: ['./src/**/*.{tsx}', './lib/**/*.{tsx}'],
     plugins: {
       tailwindcss: {},
       autoprefixer: {},

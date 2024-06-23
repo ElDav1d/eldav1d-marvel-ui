@@ -1,19 +1,29 @@
-# ElDav1d Marvel UI
+# ElDav1d Marvel UI: DEVELOPMENT
 
-This is an UI library effort consisting in the abstraction of mere presentational components applied on my pet project [Playing wirth Marvel API](https://github.com/ElDav1d/playing-with-marvel-api)
+This is an UI library effort consisting in the abstraction of presentational logic applied on my pet project [Playing with Marvel API](https://github.com/ElDav1d/playing-with-marvel-api)
 
-## Stack is React + TypeScript + Vite + Vitest + React Testing Library + Storybook + SWC + TailwindCSS
+It mimics the look and feel of the [Marvel Characters](https://www.marvel.com/characters) page.
 
-This project is transpiled with SWC for better performance
+The approach relies on [vite's library mode](https://vitejs.dev/guide/build.html#library-mode) and is heavily inspired by [this article](https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma) and this [hybrid implementation](https://github.com/waldronmatt/groundwork/tree/main/packages/ui#readme)
 
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack is React + TypeScript + Vite + Vitest + React Testing Library + Storybook + TailwindCSS
 
-## Getting Started
+[TailwindCSS](https://tailwindcss.com/) is applied as Peer Dependency. Be dareful about conflicts with your _tailwind.config.js_ or your version, if your project has it already installed.
 
-These instructions will get you a copy of the project up and running on your local
-machine for development and testing purposes.
+## Features
 
-### Prerequisites
+Support for both ECMAScript Modules and CommonJS
+
+- Outputs:
+  - `esm` and `cjs` source files
+  - source maps for JavaScript files (`.js.map`)
+  - `esm` and `cjs` declaration files (`.d.ts` and `.c.ts`)
+  - `esm` and `cjs` source maps for declaration files (`.d.ts.map` and `.c.ts.map`)
+  - compiled and uglified CSS (consuming app is not required to support css modules)
+- Subpath exports for explicit path referencing. Will auto map to the right module system
+- Libraries are externalized for a lighter bundle size (`react`, `react/jsx-runtime`, `tailwindcss`, `react-lazy-load-image-component`)
+
+## Prerequisites
 
 You need Node.js and npm or yarn installed on your machine. To check if you have Node.js installed, run this command in your terminal:
 
@@ -25,40 +35,83 @@ node -v
 yarn -v
 ```
 
-Install the dependencies:
+### Install the dependencies:
 
 `npm install` or `yarn`
 
-## Available Scripts
-
-### `npm run dev` or `yarn dev`
-
-Runs the app in the development mode. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build` or `yarn build`
-
-Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-
-### `npm run test` or `yarn test`
-
-Launches the test runner for the whole project.
-
-### `npm run test:units` or `yarn test:units`
-
-Launches the test runner for component testing.
-
-### `npm run lint` or `yarn lint`
-
-Runs the linter to check for any syntax errors or deviations from the coding standards.
-
-### `npm run preview` or `yarn preview`
-
-Runs a preview of the built app.
+## Main Scripts
 
 ### `npm run storybook` or `yarn storybook`
 
 Starts the Storybook tool for developing UI components in isolation. Open [http://localhost:6006](http://localhost:6006) to view it in the browser.
 
-### `npm run build-storybook` or `yarn build-storybook`
+### `npm run test` or `yarn test`
 
-Builds the Storybook for static deployment.
+Launches the test runner for the whole project.
+
+### `npm run build` or `yarn build`
+
+Builds the app for production to the `dist` folder. It takes this sequence:
+
+- **clean previous build:** remove ./dist directory and its contents
+
+- **compile JS:** with specific ./tsconfig-build.json
+
+- **build:** creates production bundle on new ./dist directory
+
+- **rename CSS file:** into ./dist/lib.css preventing conflicts on consumer
+
+- **clean irrelevant files:** removes tests and stories for optimal bundle size
+
+# ElDav1d Marvel UI: USAGE
+
+## Install package
+
+```bash
+npm i 'eldav1d-marvel-ui'
+```
+
+```bash
+yarn add 'eldav1d-marvel-ui'
+```
+
+## Import CSS
+
+On top of your project, in order make it available
+
+```bash
+//src/App.tsx
+
+import 'eldav1d-marvel-ui/dist/lib.css';
+...
+```
+
+## Import and apply components constants or utilities
+
+All available with named imports
+
+```bash
+//tailwind.config.js
+
+import { MARVEL_RED } from 'eldav1d-marvel-ui/'
+...
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        red: MARVEL_RED,
+      },
+    },
+  },
+}
+```
+
+```bash
+//src/App.tsx
+
+import { Loader } from 'eldav1d-marvel-ui/'
+...
+function App() {
+  return <Loader loadingLabel={'...loading'} />
+}
+```

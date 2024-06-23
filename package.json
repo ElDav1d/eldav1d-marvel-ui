@@ -1,39 +1,91 @@
 {
   "name": "eldav1d-marvel-ui",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "UI library for (and from) Playing with Marvel API ",
+  "types": "./dist/types/esm/index.d.ts",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/types/cjs/index.c.ts",
+        "default": "./dist/cjs/index.cjs"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/types/esm/*",
+        "default": "./dist/esm/*"
+      },
+      "require": {
+        "types": "./dist/types/cjs/*",
+        "default": "./dist/cjs/*"
+      }
+    },
+    "./dist/lib.css": "./dist/lib.css",
+    "./lib/*": "./lib/*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "author": {
+    "name": "ElDav1d",
+    "email": "dvivoes@yahoo.es"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "library",
+    "marvel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElDav1d/eldav1d-marvel-ui"
+  },
   "scripts": {
     "test": "vitest",
-    "test:units": "vitest --root src/",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build:rename-css": "mv ./dist/style.css ./dist/lib.css",
+    "clean:pre-build": "rimraf dist tsconfig.build.tsbuildinfo",
+    "clean:after-build": "find ./dist -type d \\( -name '__stories__' -o -name '__tests__' \\) -exec rm -r {} \\; && rimraf ./dist/style.css",
+    "build": "npm run clean:pre-build && tsc --p ./tsconfig-build.json && vite build && npm run build:rename-css && npm run clean:after-build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.3",
+    "react-lazy-load-image-component": "^1.6.2"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.3.5",
+    "@chromatic-com/storybook": "^1.4.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.13",
-    "@storybook/addon-essentials": "^8.0.10",
-    "@storybook/addon-interactions": "^8.0.10",
-    "@storybook/addon-links": "^8.0.10",
-    "@storybook/addon-onboarding": "^8.0.10",
-    "@storybook/blocks": "^8.0.10",
-    "@storybook/react": "^8.0.10",
-    "@storybook/react-vite": "^8.0.10",
-    "@storybook/test": "^8.0.10",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@storybook/addon-essentials": "^8.1.1",
+    "@storybook/addon-interactions": "^8.1.1",
+    "@storybook/addon-links": "^8.1.1",
+    "@storybook/addon-onboarding": "^8.1.1",
+    "@storybook/blocks": "^8.1.1",
+    "@storybook/react": "^8.1.1",
+    "@storybook/react-vite": "^8.1.1",
+    "@storybook/test": "^8.1.1",
     "@testing-library/react": "^15.0.7",
+    "@types/fs-extra": "^11.0.4",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-lazy-load-image-component": "^1.6.4",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react-swc": "^3.6.0",
+    "@vitejs/plugin-react": "^4.3.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -45,14 +97,24 @@
     "jsdom": "^24.0.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-refresh": "^0.14.2",
-    "storybook": "^8.0.10",
+    "rimraf": "^5.0.7",
+    "storybook": "^8.1.1",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.11",
+    "vite-plugin-dts": "^3.9.1",
     "vitest": "^1.6.0"
   },
   "engines": {
     "node": ">=20.13.1"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.15",
+    "react-select": "^5.8.0",
+    "react-spinners": "^0.13.8"
   }
 }
