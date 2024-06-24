@@ -23,7 +23,7 @@ type Story = StoryObj<typeof FormGroupContainer>;
 export const Default: Story = {
   args: {
     title: 'Form Group Container Title',
-    classNameFieldset: '',
+    classNameFieldset: 'text-white',
     children: 'Form Group Container Children',
   },
 };
@@ -31,7 +31,7 @@ export const Default: Story = {
 export const WithTextInput: Story = {
   args: {
     title: 'Form Group Container Title',
-    classNameFieldset: '',
+    classNameFieldset: 'text-white',
     children: <InputText className='' />,
   },
 };
@@ -39,7 +39,7 @@ export const WithTextInput: Story = {
 export const WithSelectInput: Story = {
   args: {
     title: 'Form Group Container Title',
-    classNameFieldset: '',
+    classNameFieldset: 'text-white',
     children: (
       <InputSelect
         ariaLabel='Select'
@@ -77,7 +77,7 @@ export const WithCheckboxList: Story = () => {
   };
 
   return (
-    <FormGroupContainer title='Checkbox List'>
+    <FormGroupContainer title='Checkbox List' classNameFieldset='text-white'>
       <CheckboxList options={options}>
         {(option, index) => (
           <CheckboxGroup
