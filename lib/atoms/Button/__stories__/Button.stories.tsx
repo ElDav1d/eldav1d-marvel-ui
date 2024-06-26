@@ -15,9 +15,22 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
+export const Neutral: Story = {
   args: {
     children: 'Button',
     onClick: () => alert('Button clicked'),
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    children: 'Button',
+    variant: 'ghost',
+    onClick: () => alert('Button clicked'),
+  },
+  parameters: {
+    backgrounds: {
+      default: 'grey',
+    },
   },
 };

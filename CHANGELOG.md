@@ -1,3 +1,9 @@
+# 1.1.3 (2024-06-26)
+
+### Features
+
+- **button variants**
+
 # 1.1.1 (2024-06-26)
 
 ### Bugfixes

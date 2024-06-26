@@ -8,6 +8,7 @@ const preview: Preview = {
       values: [
         { name: 'dark', value: '#1c1917' }, // equals to bg-stone-900
         { name: 'light', value: '#FFFFFF' },
+        { name: 'grey', value: '#78716C' }, // equals to bg-stone-500
       ],
     },
     controls: {
