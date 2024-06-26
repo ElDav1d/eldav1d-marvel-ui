@@ -1,3 +1,4 @@
+export { Button } from './atoms/Button';
 export { DialogOverlay } from './atoms/DialogOverlay';
 export { InputText } from './atoms/InputText';
 export { InputSelect } from './atoms/InputSelect';

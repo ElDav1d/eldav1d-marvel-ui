@@ -1,4 +1,24 @@
-# 1.0.0 (2024-01-18)
+# 1.1.3 (2024-06-26)
+
+### Features
+
+- **button variants**
+
+# 1.1.1 (2024-06-26)
+
+### Bugfixes
+
+- **button intrinsic attributes**
+
+# 1.1.0 (2024-06-26)
+
+## Components
+
+### Atoms
+
+- **Button**
+
+# 1.0.0 (2024-06-23)
 
 ## Components
 
