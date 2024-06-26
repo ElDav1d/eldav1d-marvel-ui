@@ -1,4 +1,4 @@
-export interface IButtonProps {
+export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
    * @property {React.ReactNode}
    * Button children
@@ -6,8 +6,11 @@ export interface IButtonProps {
   children?: React.ReactNode;
 }
 
-const Button = ({ children }: IButtonProps) => (
-  <button className='uppercase font-bold text-white border border-white px-4 py-2 active-border focus-visible-border'>
+const Button = ({ children, ...props }: IButtonProps) => (
+  <button
+    className='uppercase font-bold text-white border border-white px-4 py-2 active-border focus-visible-border'
+    {...props}
+  >
     {children}
   </button>
 );
