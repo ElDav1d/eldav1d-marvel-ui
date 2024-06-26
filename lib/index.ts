@@ -5,6 +5,7 @@ export { InputSelect } from './atoms/InputSelect';
 export { Loader } from './atoms/Loader';
 export { ResponsiveLazyImage } from './atoms/ResponsiveLazyImage';
 
+export { CardsGrid } from './molecules/CardsGrid';
 export { CheckboxGroup } from './molecules/CheckboxGroup';
 export { CheckboxList } from './molecules/CheckboxList';
 export { FormGroupContainer } from './molecules/FormGroupContainer';
