@@ -1,5 +1,10 @@
 export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
+   * @property {boolean} disabled
+   * Button disabled
+   */
+  disabled?: boolean;
+  /**
    * @property {string} variant
    * Button variant
    */
@@ -11,7 +16,15 @@ export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
   children?: React.ReactNode;
 }
 
-const Button = ({ children, variant = 'neutral', ...props }: IButtonProps) => {
+const Button = ({ disabled, children, variant = 'neutral', ...props }: IButtonProps) => {
+  const getDisabledStyles = () => {
+    if (disabled) {
+      return 'opacity-50 cursor-not-allowed';
+    }
+
+    return '';
+  };
+
   const getVariant = (variant: string) => {
     if (variant === 'neutral') {
       return 'bg-black';
@@ -22,7 +35,8 @@ const Button = ({ children, variant = 'neutral', ...props }: IButtonProps) => {
 
   return (
     <button
-      className={`uppercase font-bold text-white border border-white px-4 py-2 active-border focus-visible-border ${getVariant(variant)}`}
+      className={`uppercase font-bold text-white border border-white px-4 py-2 active-border focus-visible-border ${getVariant(variant)} ${getDisabledStyles()}`}
+      disabled={disabled}
       {...props}
     >
       {children}
