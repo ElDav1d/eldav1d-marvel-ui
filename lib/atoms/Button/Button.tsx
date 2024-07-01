@@ -15,7 +15,6 @@ export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
    */
   children?: React.ReactNode;
 }
-// test CI
 
 const Button = ({ disabled, children, variant = 'neutral', ...props }: IButtonProps) => {
   const getDisabledStyles = () => {
